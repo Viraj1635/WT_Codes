@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n=parseInt(prompt("Enter number n:"))
+        let first_term = 0, second_term = 1;
+		let third_term;
+		console.log(first_term);
+        console.log(second_term);
+		for(let i = 0 ; i < n ; i++)
+		{
+			third_term = first_term + second_term;
+			console.log(third_term+" ");
+			first_term = second_term;
+			second_term = third_term;
+		}
+    </script>
+</body>
+</html>

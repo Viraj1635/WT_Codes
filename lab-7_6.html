@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a={
+            name:"xyz",
+            rollno:10,
+            age:15
+        }
+        let {name,rollno,age} =a;
+        console.log(name,rollno,age);
+        a=[1,2,3,4];
+        let [x,y,...newArr]=a;
+        console.log(x,y,newArr);
+    </script>
+</body>
+</html>

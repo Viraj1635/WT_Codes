@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="press" onclick="click()" onmousedown="dbclick()">
+    <script>
+        function click () {
+            if (event.type =="click") {
+                console.log("button clicked")
+            }
+        }
+        function dbclick () {
+            console.log(event.type);
+            if (event.type =="mousedown") {
+                console.log("button downed")
+            }
+        }
+    </script>
+</body>
+</html>

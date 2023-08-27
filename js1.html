@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a=parseInt(prompt("Enter number a:"))
+        const b=parseInt(prompt("Enter number b:"))
+        c=prompt("Enter process c:")
+        while (b==0 && c=='/') {
+            console.log("when b is 0 then division is comes infinity so re enter process")
+            c=prompt("Enter process other than (/) c:")
+            if (c!='/') {
+                break
+            }
+        }
+        
+        
+        switch (c) {
+            case '+':
+                console.log((a+b));
+            break;
+        
+            case '-':
+                console.log((a-b));
+            break;
+
+            case '*':
+                console.log((a*b));
+            break;
+
+            case '/':
+                console.log((a/b));
+            break;
+
+            default:
+                break;
+        }
+        
+
+    </script>
+</body>
+</html>

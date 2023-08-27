@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onreset="Rese(event)">
+        <input type="text" value="" onfocus="textFocus()" onblur="textBlur()" id="textbox">
+        <input type="button" value="submit" onsubmit="Submi()" onclick="event.preventDefault(onsubmit())" id="submit" >
+        <input type="reset" value="reset" id="reet">
+    </form>
+    <script>
+        function textFocus() {
+            console.log("text focus");
+        }
+        function textBlur() {
+            console.log("text blured");
+        }
+        function Submi() {
+            console.log("text submited");
+        }
+        function Rese(e) {
+            console.log("form reseted");
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<h1 align="center">Student Form </h1>	
+	<style type="text/css">
+		.form{
+			background-color: lightpink;
+		}
+	</style>
+</head>
+<body bgcolor="lightpink">
+	<form class="form" action="form" method="get" align="center">
+		<fieldset>
+			<legend>
+				Student Registration
+			</legend>
+			<form align="center">
+				
+				
+					<h5>Username:</h5>
+					<input type="text" name="text">
+				</br>
+					<h5>Adress:</h5>
+					<input type="text" name="address">
+				</br>
+					<h5>Phone no.:</h5>
+					<input type="tel"  pattern=[0-9]{3} required >
+				</br>
+					<h5>Password:</h5>
+					<input type="Password" name="">
+				</br>
+					<h5>Gender:</h5>
+					Male<input type="radio" name="gender">
+					Female<input type="radio" name="gender">				
+				</br>
+					<h5>Country:</h5>
+						<select>
+							<option>india</option>
+							<option>india</option>
+							<option>india</option>
+							<option>india</option>
+
+						</select>
+				</br>
+					<h5>Hobby:</h5>
+						music<input type="checkbox" name="hobbie">
+						drawing<input type="checkbox" name="hobbie">
+						dance<input type="checkbox" name="hobbie"><br>
+						swimming<input type="checkbox" name="hobbie">
+						singing<input type="checkbox" name="hobbie">
+						athletics<input type="checkbox" name="hobbie">
+				</br>
+					<input type="submit" name="">
+					<input type="reset" name="reset">
+				</br>
+			</form>
+		</fieldset>	
+	</form>
+</body>
+</html>

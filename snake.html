@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #myImg{
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            width: 80px;
+            height: 80px;
+        }
+        #khavanu{
+            position: absolute;
+            width: 70px;
+            height: auto;
+        }
+        #scoreboard{
+            position: absolute;
+            left: 720px;
+            font-size: 28px;
+            color: aliceblue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body onload="changeKhavanuPosition()" bgcolor="#006400">
+    <img src="snake.png" id="myImg">
+    <img src="Apple.png" id="khavanu">
+    <div id="scoreboard">
+    <p1>Score:<span id="score">00</span></p1>
+    </div>
+        <script type="text/javascript">
+            document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38') {
+                startup()
+            }
+            else if (e.keyCode == '40') {
+                startdown()
+            }
+            else if (e.keyCode == '37') {
+                startLeft()
+            }
+            else if (e.keyCode == '39') {
+                startRight()
+            }
+
+        }
+
+            leftpos=500;
+            leftint=0;
+            rightint=0;
+
+            uppos=100;
+            upint=0;
+            downint=0;
+            function changeKhavanuPosition() {
+                leftApple=Math.ceil(Math.random()*1300)+100
+                topApple=Math.ceil(Math.random()*550)+100
+                k=document.getElementById('khavanu')
+                k.style.left=leftApple+"px";
+                k.style.top=topApple+"px";
+            }
+                
+            function startLeft() {
+                clearInterval(leftint);
+                clearInterval(rightint);
+                clearInterval(upint);
+                clearInterval(downint);
+                leftint=setInterval(moveLeft,1);
+            }
+            function startRight() {
+                clearInterval(leftint);
+                clearInterval(rightint);
+                clearInterval(upint);
+                clearInterval(downint);
+                rightint=setInterval(moveRight,1);
+            }
+            function startup() {
+                clearInterval(leftint);
+                clearInterval(rightint);
+                clearInterval(upint);
+                clearInterval(downint);
+                upint=setInterval(moveUp,1);
+            }
+            function startdown() {
+                clearInterval(leftint);
+                clearInterval(rightint);
+                clearInterval(upint);
+                clearInterval(downint);
+                downint=setInterval(moveDown,1);
+            }
+
+
+            function moveLeft() {
+                if (score>=5) {
+                    leftpos-=2;
+                }
+                else{
+                    leftpos--;
+                }
+                checkEaten();
+                if (leftpos<0) {
+                    leftpos=screen.availWidth-80
+                }
+                i=document.getElementById('myImg')
+                i.src="snake.png"
+                i.style.left=leftpos+"px"
+            }
+            function moveRight(){
+                if (score>=5) {
+                    leftpos+=2;
+                }
+                else{
+                    leftpos++;
+                }
+                checkEaten();
+                if (leftpos>screen.availWidth-80) {
+                    leftpos=0
+                }
+                i=document.getElementById('myImg')
+                i.src="snakeR.png"
+                i.style.left=leftpos+"px"
+            }
+            function moveUp() {
+                if (score>=5) {
+                    uppos-=2;
+                }
+                else{
+                    uppos--;
+                }
+                checkEaten();
+                if (uppos<0) {
+                    uppos=670
+                }
+                i=document.getElementById('myImg')
+                i.src="snakeU.png"
+                i.style.top=uppos+"px"
+            }
+            function moveDown(){
+                if (score>=5) {
+                    uppos+=2;
+                }
+                else{
+                    uppos++;
+                }
+                checkEaten();
+                if (uppos>670) {
+                    uppos=0
+                }
+                i=document.getElementById('myImg')
+                i.src="snakeB.png"
+                i.style.top=uppos+"px"
+            }
+
+            function checkEaten() {
+                if (uppos+25>=topApple-30 && leftpos+25>=leftApple-30 ) {
+                    if (uppos+25<topApple+70 && leftpos+25<leftApple+70 ) {
+                        changeKhavanuPosition();
+                        scorePlus();
+                    }
+                }
+            }
+            score=0;
+            function scorePlus(){
+                score++;
+                fillText(`Score: ${score}`)
+            }
+            function scorePlus() {
+                score ++;
+                scoreDisplay = document.getElementById("score");
+                scoreDisplay.innerText = score;
+            }
+
+        </script>
+</body>
+</html>

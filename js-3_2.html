@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=new Array()
+        let n=parseInt(prompt("insert length:"))
+        for (let i = 0; i < n; i++) {
+            a[i] = parseInt(prompt("insert number:"))
+            
+        }
+        let flag=0
+        for (let i = 0; i < a.length; i++) {
+            flag=1
+            for (let j = 0; j < a.length-i-1; j++) {
+                if (a[i]<a[j]) {
+                    let temp = a[i]
+                    a[i] = a[j]
+                    a[j] = temp
+                    f=0
+                }
+                if (f=1) {
+                    break
+                }
+            }            
+        }
+        if (a[i]>a[j]) {
+
+        }
+        for (let i = 0; i < n; i++) {
+            console.log(a[i])            
+        }
+    </script>
+</body>
+</html>

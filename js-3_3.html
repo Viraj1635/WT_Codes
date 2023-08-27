@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="push" onclick="fn_push()">
+    <input type="button" value="pop" onclick="fn_pop()">
+    <input type="button" value="shift" onclick="fn_shift()">
+    <input type="button" value="unshift" onclick="fn_unshift()">
+    <input type="button" value="splice" onclick="fn_splice()">
+    <input type="button" value="sort" onclick="fn_sort()">
+    <input type="button" value="print" onclick="fn_print()">
+    <script>
+        let a=new Array();
+        a = [1,2,3,4,5];
+        let i=0
+        function fn_push() {
+            n=parseInt(prompt("enter number"))
+            a.push(n)
+            i=i+1
+        }
+        function fn_pop() {
+            a.pop()
+            i=i-1
+        }
+        function fn_shift() {
+            a.shift()
+            i=i-1
+        }
+        function fn_unshift() {
+            n=parseInt(prompt("enter number"))
+            a.unshift(n)
+            i=i+1
+        }
+        function fn_splice() {
+            n=parseInt(prompt("enter index number:"))
+            m=parseInt(prompt("enter length to delete"))
+            a.splice(n,m)
+            // console.log(a)
+        }
+        function fn_sort() {
+            for (let n = 0; n < a.length; n++) {
+                for (let j = 0; j < a.length; j++) {
+                    if (a[n]<a[j]) {
+                        let temp = a[n]
+                        a[n] = a[j]
+                        a[j] = temp
+                    }
+                }
+            }   
+        }
+        function fn_print() {
+            console.log(a)
+        }
+    </script>
+</body>
+</html>
